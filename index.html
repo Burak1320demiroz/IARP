@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yapay zeka destekli bir matematik chatbotu. Matematik sorularınızı çözmek için tasarlandı.">
+    <title>Yapay Zeka Destekli Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <p>Matematik problemlerinizi çözmek için geliştirilen yapay zeka destekli chatbot!</p>
+    </header>
+
+    <main>
+        <div class="chatbot-container">
+            <h2>IARP</h2>
+            <div id="chat-log">
+                <!-- Mesajlar burada görünecek -->
+            </div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Mesajınızı yazın..." onkeypress="if(event.key === 'Enter') sendMessage()">
+                <button onclick="sendMessage()">Gönder</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="mailto:iarp010101@gmail.com" target="_blank" class="contact-link">
+                <img src="email-icon.png" alt="E-posta ile iletişim" class="social-icon">
+                <span>E-posta ile İletişim</span>
+            </a>
+            <a href="https://youtube.com/@iarp-0101" target="_blank" class="contact-link youtube-link">
+                <img src="youtube-logo.png" alt="YouTube Kanalı" class="social-icon">
+                <span>YouTube Kanalı</span>
+            </a>
+        </div>
+        <p>&copy; Tüm hakları saklıdır.</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
