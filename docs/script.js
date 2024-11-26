@@ -1,13 +1,10 @@
 const chatLog = document.getElementById('chat-log');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
-
-// Bot mesajlarını ekler
 function sendBotMessage(message) {
     addMessage(message, 'bot');
 }
 
-// Kullanıcı ve bot mesajlarını ekler
 function addMessage(text, sender) {
     const message = document.createElement('div');
     message.classList.add('message', sender);
@@ -19,30 +16,27 @@ function addMessage(text, sender) {
 
     message.appendChild(timestamp);
     chatLog.appendChild(message);
-    chatLog.scrollTop = chatLog.scrollHeight; // Yeni mesajlar en alta kaydırılır
+    chatLog.scrollTop = chatLog.scrollHeight; 
 }
 
-// Sayfa yüklendiğinde ilk mesajı gönderir
 window.onload = function() {
-    sendBotMessage("Hoşgeldiniz!");  // İlk mesaj olarak "Hoşgeldiniz" yazdırılır
+    sendBotMessage("Hoşgeldiniz!");  
 };
 
-// Kullanıcı mesajını gönderme işlemi
 sendButton.addEventListener('click', function() {
     const userText = userInput.value.trim();
     if (userText !== '') {
-        addMessage(userText, 'user');  // Kullanıcı mesajını ekler
-        userInput.value = '';  // Inputu sıfırlar
+        addMessage(userText, 'user');  
+        userInput.value = '';  
     }
 });
 
-// Klavye ile "Enter" tuşuna basıldığında mesaj gönderir
 userInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         const userText = userInput.value.trim();
         if (userText !== '') {
-            addMessage(userText, 'user');  // Kullanıcı mesajını ekler
-            userInput.value = '';  // Inputu sıfırlar
+            addMessage(userText, 'user');  
+            userInput.value = '';  
         }
     }
 });
