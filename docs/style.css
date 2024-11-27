@@ -116,6 +116,7 @@ table td {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Mesaj stili */
 .message {
     margin: 10px 0;
@@ -311,7 +312,6 @@ footer:hover {
 .close-btn:hover {
     background-color: #d32f2f; /* Daha koyu kırmızı */
 }
-
 
 
 /* Mobil uyumlu stil */

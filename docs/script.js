@@ -86,10 +86,12 @@ function closeAlert() {
 
 
 
+
 // Kullanıcı mesajına göre cevap verecek fonksiyon
 function handleUserMessage(userText) {
     // Kullanıcıdan alınan metni küçük harfe çevir
     const lowerCaseUserText = userText.toLowerCase();
+
     // Basit Sorular
     if (userText.toLowerCase().includes("basit sorular")) {
         sendBotMessage(`
@@ -123,33 +125,53 @@ function handleUserMessage(userText) {
     } else if (userText.toLowerCase().includes("hoşça kal") || userText.toLowerCase().includes("görüşürüz")) {
         sendBotMessage("Hoşça kalın! Tekrar görüşmek üzere.");
     }
-
     // Matematik Konuları
     else if (userText.toLowerCase().includes("matematik konuları")) {
         sendBotMessage("Matematik lisans konuları şunlardır:\n- Graf Teorisi");
     }
     // Graf Teorisi
     else if (userText.toLowerCase().includes("graf teorisi")) {
-        sendBotMessage("Graf teorisi ile ilgili ne bilmek istiyorusunuz : \n - Graf Nedir? \n  - Sıfır Grafları  \n - Patika Grafları \n - Devir Grafları \n - Yıldız grafları \n - Duble Yıldız Grafları");
+        sendBotMessage("Graf teorisi ile ilgili ne bilmek istiyorusunuz : \n - Graf Nedir? \n  - Sıfır Grafları  \n - Patika Grafları \n - Devir Grafları \n - Yıldız grafları \n - Duble Yıldız Grafları \n - Tam Graflar \n - Kutuplasmıs Koseler, Kutuplasma Sayısı ve Kutuplasma");
     }   else if (userText.toLowerCase().includes("graf nedir?")) {
         sendBotMessage("Graf teorisi, düğümler ve bu düğümleri birbirine bağlayan kenarlardan oluşan yapıları inceleyen bir matematik dalıdır. Bu teori, ağ yapıları, ulaşım sistemleri ve bağlantıların optimizasyonu gibi birçok alanda kullanılır.");
     }   else if (userText.toLowerCase().includes("sıfır grafları")) {
         sendBotMessage("Sıfır grafları, sıfır kenara sahip sadece köşelerden oluşan graflardır. n köşeli bir sıfır grafı N<sub>n</sub> şeklinde gösterilir.");
     }   else if (userText.toLowerCase().includes("patika grafları")) {
-        sendBotMessage("Patika grafları, v<sub>1</sub>, v<sub>2</sub>, ..., v<sub>n</sub> birbirinden farklı köşeler olsun. Ardışık v<sub>1</sub>v<sub>2</sub>, v<sub>2</sub>v<sub>3</sub>, ..., v<sub>n-1</sub>v<sub>n</sub> kenarlarına sahip olan grafa patika grafı denir ve P<sub>n</sub> şeklinde gösterilir. \n P<sub>n</sub> grafında n köşe ve n-1 kenar vardır v<sub>1</sub> ile v<sub>n</sub>, P<sub>n</sub> grafının uç köşeleri veya uçları denir. \n P<sub>n</sub> patika grafının uzunluğu kenar sayısına eşittir. Bu uzaklık d(v<sub>n</sub>,v<sub>n</sub>) şeklinde gösterilir v<sub>n</sub> ile v<sub>n</sub> arasındaki en kısa uzaklık olarak tanımlanır.");
+        sendBotMessage("Patika grafları, v<sub>1</sub>, v<sub>2</sub>, ..., v<sub>n</sub> birbirinden farklı köşeler olsun. Ardışık v<sub>1</sub>v<sub>2</sub>, v<sub>2</sub>v<sub>3</sub>, ..., v<sub>n-1</sub>v<sub>n</sub> kenarlarına sahip olan grafa patika grafı denir ve P<sub>n</sub> şeklinde gösterilir. \n P<sub>n</sub> grafında n köşe ve n-1 kenar vardır v<sub>1</sub> ile v<sub>n</sub>, P<sub>n</sub> grafının uç köşeleri veya uçları denir. \n P<sub>n</sub> patika grafının uzunluğu kenar sayısına eşittir. Bu uzaklık d(v<sub>1</sub>,v<sub>n</sub>) şeklinde gösterilir v<sub>1</sub> ile v<sub>n</sub> arasındaki en kısa uzaklık olarak tanımlanır.");
     }   else if (userText.toLowerCase().includes("devir grafları")) {
         sendBotMessage("Devir Grafları, Bir patika grafının iki uç noktasının birleştirilmesiyle elde edilen graftır. n köşeli ve n kenarlı olan bir devir grafı C<sub>n</sub> şeklinde gösterilir ve n > 2 olmalıdır.");
-    }   else if (userText.toLowerCase().includes("yıldız grafları")) {
-        sendBotMessage("...");
     }   else if (userText.toLowerCase().includes("duble yıldız grafları")) {
-        sendBotMessage("...");
+        sendBotMessage("Duble Yıldız Grafı, Yıldız grafının biraz değiştirilmiş hali olan duble yıldız grafı S<sub>n,n</sub> ile gösterilir. \n S<sub>n</sub> yıldız grafının çevrel köşelerine birer sallanan kenar eklenmesiyle oluşur. \n Dikkat edilirse S<sub>n,n</sub> duble yıldız grafının köşe sayısı 2n-1 ve kenar sayısı 2(n-1) dir.");
+    }   else if (userText.toLowerCase().includes("yıldız grafları")) {
+        sendBotMessage("Yıldız Grafı, Bir merkezi köşe ile her biri sadece bu köşeye birleştirilen çevresel (uç) köşelerden oluşur. \n Köşe Sayısı n olan bir yıldız grafı S<sub>n</sub> ile gösterelir ve kenar sayısı n-1 dir.");
+    }   else if (userText.toLowerCase().includes("tam graflar")) {
+        sendBotMessage("Tam Graf, her bir köse diger tüm koselerle birlestirilir. Bir kose ikilisi bir kenar ile birleştirildiğinden K<sub>n</sub> ile göstereceğimiz n köşeli bir tam grafın <span>n</span><span>(n - 1)</span> / 2 tane kenarı vardır.");
+    }   else if (userText.toLowerCase().includes("kutuplasmıs koseler, kutuplasma sayısı ve kutuplasma")) {
+        sendBotMessage("Bir G grafında bulunan tam graflarından en büyük olanı K<sub>r</sub> ile r sayısına G grafının Kutuplaşma sayısı denilir ve w(G) = r ile gösterilir. \n Buradaki K<sub>r</sub> tam grafının köselerinin olusturdugu r elemanlı kümeye bir kutuplasma ve bu koselere kutuplasmıs koseler denir.");
+    }   else if (userText.toLowerCase().includes("bagımsız (duragan), maksimum bagımsız ve maksimal bagımsız kumeler")) {
+        sendBotMessage("Kutuplaşmaya tamamen zıt olan bir kavram bagımsızlıktır. Bir G grafında bagımsız (duragan) bir küme, birbirine komsu olmayan koselerden bulunabilir. \n Bunlardan bazıları özellikle öenmlidir. Bagımsız bir A kümesi verilsin. Eger grafta daha buyuk bir bagımsız kume bulunamıyorsa A ya maksimum bagımsız kume denilir. \n A ksumesi daha buyuk bır bagımsız kumeye genisletilemiyorsa A ya maksimal bagımsız kume denilir.");
+    }   else if (userText.toLowerCase().includes("bagımsızlık sayısı")) {
+        sendBotMessage("Bir G grafındaki bir maksimum bagımsız kumenin eleman sayısı g grafının bagımsızlık sayısı denirlir ve &alpha;(G) ile gösterilir");
+    }   else if (userText.toLowerCase().includes("larva grafları")) {
+        sendBotMessage("Larva Grafı, T<sub>r,s</sub> ile gösterilen larva grafı bir C<sub>r</sub> devir grafının herhangi bir kosesine s uzunlugunda bir P<sub>s+1</sub> patika grafının eklenmesiyle elde edilen graftır");
+    }   else if (userText.toLowerCase().includes("tekerlek grafları")) {
+        sendBotMessage("Bir S<sub>n</sub> yıldız grafının ardasık cevre koselerinin birer kenarla bırlestırmesiyle elde edilen grafa tekerlek grafı denilir ve W<sub>n</sub> ile gösterilir. \n Kose sayısı n olup kenar sayısı da 2(n-1) dir.");
+    }   else if (userText.toLowerCase().includes("merdiven grafları")) {
+        sendBotMessage("Merdiven Grafı, bir C<sub>n</sub> devir grafının diger bir C<sub>n</sub> devir grafı ile 1 ile n arasındaki her bir k icin k ıncı koselerini birlestirmek suretiyle biraraya getirilmesiyle el edilen grafa bir merdiven grafı denilir ve L<sub>n</sub> ile gösterilir.");
+    }   else if (userText.toLowerCase().includes("yel degirmeni grafları")) {
+        sendBotMessage("K<sub>n</sub> tam grafının m kopyasının birer kosesinden birlestirerek elde edilen grafa yel degırmeni grafı denir ve W<sub>n</sub><sup>m</sup> ile gösterilir");
+    }   else if (userText.toLowerCase().includes("dosluk grafları")) {
+        sendBotMessage("C<sub>n</sub> devir grafının m kopyasının birer kosesinden birlestirerek elde edilen grafa dosluk grafı denir ve D<sub>n</sub><sup>m</sup> ile gösterilir");
+    }   else if (userText.toLowerCase().includes("tırtıl grafları")) {
+        sendBotMessage("Tırtıl Grafı, bir patika graftan (tırtıl iskeleti) uzaklığı en az 1 birim olan koselerden (tırtılın ayakları) ve bunları patika grafa birlestiren kenarlara olusan bir graftır.");
     }
+
     // Python Konuları
     else if (userText.toLowerCase().includes("python ile matematik")) {
         sendBotMessage("Python ile Matematik:\n - Python Numpy Kütüphanesi");
     }
 
-
+    
 
 
 
