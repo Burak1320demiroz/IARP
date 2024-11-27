@@ -60,9 +60,9 @@ function handleUserMessage(userText) {
     }   else if (userText.toLowerCase().includes("devir grafları")) {
         sendBotMessage("Devir Grafları, Bir patika grafının iki uç noktasının birleştirilmesiyle elde edilen graftır. n köşeli ve n kenarlı olan bir devir grafı C<sub>n</sub> şeklinde gösterilir ve n > 2 olmalıdır.");
     }   else if (userText.toLowerCase().includes("yıldız grafları")) {
-        sendBotMessage("");
+        sendBotMessage("...");
     }   else if (userText.toLowerCase().includes("duble yıldız grafları")) {
-        sendBotMessage("");
+        sendBotMessage("...");
     }
 
 
