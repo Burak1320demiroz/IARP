@@ -92,12 +92,38 @@ function handleUserMessage(userText) {
     const lowerCaseUserText = userText.toLowerCase();
     // Basit Sorular
     if (userText.toLowerCase().includes("basit sorular")) {
-        sendBotMessage("IARP nedir?, IARP amacı nedir?");
-    } else if (userText.toLowerCase().includes("iarp amacı nedir?")) {
-        sendBotMessage("IARP'nin Amacı, Matematiksel ve Başka Konularda Asistanlık Yapmak İcin Hazırlanmıştır.");
+        sendBotMessage(`
+            Basit sorular:
+            1. IARP nedir?
+            2. IARP amacı nedir?
+            3. Matematik anlamında ne yapabilir?
+            4. Hangi konular?
+            5. Merhaba 
+            6. Nasılsın?
+            7. Kaç yaşındasın?
+            8. Ne yapabiliyorsun?
+            9. Hoşça kal
+        `);
     } else if (userText.toLowerCase().includes("iarp nedir?")) {
-        sendBotMessage("IARP, Gelişmekte Olan Bi Asistan Chatbottur");
+        sendBotMessage("IARP, gelişmekte olan bir asistan chatbottur. Matematik sorularını çözmek ve bilgi sağlamak amacıyla tasarlanmıştır.");
+    } else if (userText.toLowerCase().includes("iarp amacı nedir?")) {
+        sendBotMessage("IARP'nin amacı, matematiksel ve başka konularda asistanlık yapmaktır.");
+    } else if (userText.toLowerCase().includes("matematik anlamında ne yapabilir?")) {
+        sendBotMessage("IARP, matematiksel problemlerin çözümüne yardımcı olmak için geliştirildi.");
+    } else if (userText.toLowerCase().includes("hangi konular?")) {
+        sendBotMessage("IARP, lineer cebir, analiz, olasılık, istatistik, sayılar teorisi, graf teorisi ve daha birçok matematik konusunu kapsar.");
+    } else if (userText.toLowerCase().includes("merhaba") || userText.toLowerCase().includes("selam")) {
+        sendBotMessage("Merhaba! Size nasıl yardımcı olabilirim?");
+    } else if (userText.toLowerCase().includes("nasılsın")) {
+        sendBotMessage("Teşekkür ederim, gayet iyiyim! Sizin için ne yapabilirim?");
+    } else if (userText.toLowerCase().includes("kaç yaşındasın")) {
+        sendBotMessage("Ben bir yapay zeka modeliyim, bu yüzden yaşım yok ama hep öğrenmeye devam ediyorum!");
+    } else if (userText.toLowerCase().includes("ne yapabiliyorsun")) {
+        sendBotMessage("Matematik soruları çözebilir, bilgi verebilir ve temel sohbet edebilirim.");
+    } else if (userText.toLowerCase().includes("hoşça kal") || userText.toLowerCase().includes("görüşürüz")) {
+        sendBotMessage("Hoşça kalın! Tekrar görüşmek üzere.");
     }
+
     // Matematik Konuları
     else if (userText.toLowerCase().includes("matematik konuları")) {
         sendBotMessage("Matematik lisans konuları şunlardır:\n- Graf Teorisi");
@@ -118,7 +144,10 @@ function handleUserMessage(userText) {
     }   else if (userText.toLowerCase().includes("duble yıldız grafları")) {
         sendBotMessage("...");
     }
-
+    // Python Konuları
+    else if (userText.toLowerCase().includes("python ile matematik")) {
+        sendBotMessage("Python ile Matematik:\n - Python Numpy Kütüphanesi");
+    }
 
 
 
@@ -132,5 +161,5 @@ function handleUserMessage(userText) {
 }
 
 window.onload = function() {
-    sendBotMessage("Hoşgeldiniz! Aşağıdaki konu başlıklarından devam edebilir:\n- Basit Sorular\n- Matematik Konuları");
+    sendBotMessage("Hoşgeldiniz! Aşağıdaki konu başlıklarından devam edebilir:\n - Basit Sorular \n- Python ile Matematik\n- Matematik Konuları");
 };
