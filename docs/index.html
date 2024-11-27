@@ -11,23 +11,96 @@
 </head>
 
 <body>
+    <!-- Uyarı Mesajı -->
+    <div id="alert-box" class="alert-box">
+        <p class="alert-title">Chatbot Kullanım Bilgilendirmesi</p>
+        <p class="alert-subtitle">
+            Chatbotu kullanmak için altındaki *üst ve alt başlıkları* kullanabilirsiniz. <br>
+            Yazdığınız kelimenin **büyük** veya **küçük harfle** olması fark etmez.
+        </p>
+        <button class="close-btn" onclick="closeAlert()">Anladım</button>
+    </div>
+    
+
     <header>
         <p>IARP</p>
+        <!-- Butonlar -->
+        <div class="header-buttons">
+            <button id="open-chatbot" onclick="toggleSection('chatbot-container')">IARP</button>
+            <button id="show-table" onclick="toggleSection('math-table')">Matematik</button>
+            <button id="show-python-table" onclick="toggleSection('python-libraries-table')">Python İle Matematik   Yakında...</button>
+        </div>        
     </header>
 
     <main>
-        <div class="chatbot-container">
+        <!-- Chatbot Container -->
+        <div id="chatbot-container" class="chatbot-container" style="display: none;">
             <h2>IARP</h2>
-            <div id="chat-log">
-            </div>
+            <div id="chat-log"></div>
             <div class="input-container">
                 <input type="text" id="user-input" placeholder="Mesajınızı yazın..." onkeypress="if(event.key === 'Enter') sendMessage()">
                 <button onclick="sendMessage()">Gönder</button>
             </div>
-        
+        </div>
+    
+        <!-- Tabloyu Gizle ve Göster -->
+        <div id="math-table" class="math-table" style="display: none;">
+            <h2>Matematik Lisans Konuları</h2>
+            <table class="topics-table">
+                <thead>
+                    <tr>
+                        <th>Graf Teorisi</th>
+                        <th>Algoritma Geliştirme</th>
+                        <th>Sayılar Teorisi</th>
+                        <th>Olasılık</th>
+                        <th>İstatistik</th>
+                        <th>Lineer Cebir</th>
+                        <th>Kriptoloji(Şifreleme)</th>
+                        <th>Analiz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Graf Nedir?</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>Sıfır Grafları</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>Patika Grafları</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>Devir Grafları</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>Yıldız Grafları</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>Duble Yıldız Grafları</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>                    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Python Kütüphaneleri Tablosu -->
+        <div id="python-libraries-table" class="math-table" style="display: none;">
+            <h2>Python</h2>
+            <table class="topics-table">
+                <thead>
+                    <tr>
+                        <th>Python Numpy Kütüphanesi</th>
+                        <th>Python Pandas Kütüphanesi</th>
+                        <th>Python Matplotlib Kütüphanesi</th>
+                        <th>Python İle Matematik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                    <tr><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+                </tbody>
+            </table>
         </div>
     </main>
-    
+
     <footer>
         <div class="social-links">
             <a href="iarp010101@gmail.com" target="_blank" class="contact-link">
@@ -41,7 +114,6 @@
         </div>
         <p>&copy; .</p>
     </footer>
-    
 
     <script src="script.js"></script>
 </body>

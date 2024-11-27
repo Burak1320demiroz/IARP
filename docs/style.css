@@ -1,113 +1,159 @@
+/* Genel stil ayarları */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #f5f5f5; /* Açık gri metin rengi */
+    background-color: #121212; /* Koyu siyah arka plan */
     overflow-x: hidden;
 }
 
+/* Header stili - Sayfanın üst kısmı */
 header {
-    background-color: #444;
+    background-color: #333; /* Koyu gri header arka planı */
     color: #fff;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.3s ease;
 }
 
+/* Header hover - header üzerine gelindiğinde renk değişimi */
 header:hover {
-    background-color: #555;
+    background-color: #444; /* Daha koyu gri hover efekti */
 }
 
+/* Header butonları - Header içindeki butonlar */
+header .header-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Header butonları stili */
+header .header-buttons button {
+    background-color: #007bff; /* Mavi buton rengi */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Header butonları hover efekti */
+header .header-buttons button:hover {
+    background-color: #0056b3; /* Daha koyu mavi hover efekti */
+    transform: translateY(-5px);
+}
+
+/* Header butonları aktif durumu */
+header .header-buttons button:active {
+    background-color: #004085; /* Koyu mavi aktif buton */
+    transform: translateY(0);
+}
+
+/* Ana içerik düzenlemeleri - Sayfanın iç kısmı */
 main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    justify-content: center; 
-    height: calc(100vh - 120px); 
+    justify-content: center;
+    height: calc(100vh - 120px);
 }
 
+/* Matematik tablosu ve chatbot container'ı düzenle */
 .math-table, .chatbot-container {
     flex: 1 1 calc(50% - 20px);
-    background-color: #fff;
+    background-color: #1e1e1e; /* Koyu gri arka plan */
+    color: #fff;
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover efekti */
 .math-table:hover, .chatbot-container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Tablo stil ayarları */
 table {
     border-collapse: collapse;
     margin-top: 10px;
-    width: 60%; 
+    width: 100%;
 }
 
 table td {
     padding: 10px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #555; /* Tablo kenarları koyulaştırıldı */
     font-size: 0.95rem;
+    color: #ccc; /* Tablo yazı rengi */
 }
 
+/* Chatbot stil ayarları */
 #chat-log {
-    width: 99%; 
-    height: 500px; 
-    overflow-y: auto; 
-    border: 1px solid #ccc; 
-    padding: 8px; 
+    width: 99%;
+    height: 500px;
+    overflow-y: auto;
+    border: 1px solid #555;
+    padding: 8px;
     margin-bottom: 10px;
-    border-radius: 6px; 
-    background-color: #f5f5f5; 
+    border-radius: 6px;
+    background-color: #333; /* Koyu gri arka plan */
+    color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Mesaj stili */
 .message {
     margin: 10px 0;
     padding: 8px;
     border-radius: 6px;
 }
 
+/* Kullanıcı mesajları stili */
 .message.user {
-    background-color: #eef2f7;
+    background-color: #444; /* Kullanıcı mesajları koyu gri */
     text-align: right;
 }
 
+/* Bot mesajları stili */
 .message.bot {
-    background-color: #d9fdd9;
+    background-color: #555; /* Bot mesajları daha koyu gri */
     text-align: left;
 }
 
-.feedback {
-    font-size: 0.9em;
-    margin-top: 15px;
-    color: #666;
-}
-
+/* Kullanıcı giriş alanı */
 .input-container {
     display: flex;
     gap: 10px;
-    justify-content: center; 
+    justify-content: center;
     width: 100%;
 }
 
+/* Input alanı - metin girişi */
 input[type="text"] {
     flex: 1;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #555;
     border-radius: 6px;
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
     outline: none;
     transition: border-color 0.3s ease, transform 0.3s ease;
-    max-width: 1000px; 
+    background-color: #222; /* Koyu gri arka plan */
+    color: #fff;
 }
 
 input[type="text"]:focus {
@@ -115,8 +161,9 @@ input[type="text"]:focus {
     transform: scale(1.05);
 }
 
+/* Buton stil ayarları */
 button {
-    background-color: #444;
+    background-color: #007bff; /* Mavi buton rengi */
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -128,32 +175,37 @@ button {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Buton hover efekti */
 button:hover {
-    background-color: #555;
+    background-color: #0056b3;
     transform: scale(1.05);
 }
 
+/* Buton aktif durumu */
 button:active {
-    background-color: #333;
+    background-color: #004085;
     transform: scale(0.98);
 }
 
+/* Footer stil ayarları */
 footer {
     text-align: center;
-    background-color: #444;
+    background-color: #333; /* Koyu gri footer arka planı */
     color: #fff;
     padding: 15px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
+/* Footer hover efekti */
 footer:hover {
-    background-color: #555; 
+    background-color: #444;
 }
 
+/* Sosyal bağlantılar */
 .social-links {
     display: flex;
     justify-content: center;
@@ -161,6 +213,7 @@ footer:hover {
     margin-top: 10px;
 }
 
+/* İletişim linkleri */
 .contact-link {
     display: flex;
     align-items: center;
@@ -172,21 +225,24 @@ footer:hover {
     padding: 10px 20px;
     border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(248, 246, 246, 0.1);
 }
 
+/* İletişim linklerinin hover efekti */
 .contact-link:hover {
     transform: scale(1.1);
 }
 
+/* YouTube linki - kendi özel stilini ekle */
 .youtube-link {
-    background-color: #444; 
+    background-color: #444;
 }
 
 .youtube-link:hover {
     background-color: #555;
 }
 
+/* Kontakt linki stili */
 .contact-link:first-child {
     background-color: #444;
 }
@@ -205,10 +261,86 @@ footer:hover {
     transform: rotate(360deg);
 }
 
+/* Büyük ve etkili uyarı mesajı */
+.alert-box {
+    background-color: #000000; /* Canlı yeşil arka plan */
+    color: #fff; /* Beyaz yazı */
+    padding: 30px; /* Geniş kutu için padding */
+    position: fixed;
+    top: 50%; /* Yatay ortalama */
+    left: 50%; /* Dikey ortalama */
+    transform: translate(-50%, -50%); /* Tam ortalama */
+    border-radius: 10px; /* Daha yuvarlak köşeler */
+    display: block; /* Başlangıçta görünür */
+    z-index: 1000;
+    font-size: 18px; /* Daha büyük yazı boyutu */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Daha güçlü bir gölge */
+    text-align: center; /* Yazıyı ortala */
+    width: 80%; /* Daha geniş kutu */
+    max-width: 600px; /* Maksimum genişlik */
+}
 
+/* Başlık */
+.alert-box .alert-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px; /* Başlık ile mesaj arasında boşluk */
+    text-transform: uppercase; /* Büyük harf başlık */
+}
+
+/* Alt başlık */
+.alert-box .alert-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px; /* Alt başlık ile buton arasında boşluk */
+    line-height: 1.5; /* Okunabilirlik için satır aralığı */
+}
+
+/* Kapatma butonu */
+.close-btn {
+    background-color: #000000; /* Kırmızı buton */
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px; /* Hafif yuvarlak köşeler */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hover efekti için geçiş */
+}
+
+/* Kapatma butonuna hover efekti */
+.close-btn:hover {
+    background-color: #d32f2f; /* Daha koyu kırmızı */
+}
+
+
+
+/* Mobil uyumlu stil */
 @media (max-width: 768px) {
     .small-table {
-        width: 90%; /* Mobil cihazlarda genişliği artır */
-        font-size: 0.7rem; /* Yazı boyutunu daha da küçült */
+        width: 90%;
+        font-size: 0.7rem;
+    }
+
+    /* Ana içerik düzeni */
+    main {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .math-table, .chatbot-container {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+
+    header .header-buttons {
+        flex-direction: column;
+    }
+
+    header .header-buttons button {
+        width: 100%;
+        padding: 12px;
+        margin: 5px 0;
     }
 }
+
+

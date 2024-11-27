@@ -32,6 +32,60 @@ function sendMessage() {
     }
 }
 
+function toggleChatbot() {
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const tableContainer = document.getElementById('math-table');
+    
+    // Chatbotu göster ve tabloyu gizle
+    if (chatbotContainer.style.display === 'none' || chatbotContainer.style.display === '') {
+        chatbotContainer.style.display = 'block';
+        tableContainer.style.display = 'none';
+    } else {
+        chatbotContainer.style.display = 'none';
+    }
+}
+
+function toggleTable() {
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const tableContainer = document.getElementById('math-table');
+    
+    // Tabloyu göster ve chatbotu gizle
+    if (tableContainer.style.display === 'none' || tableContainer.style.display === '') {
+        tableContainer.style.display = 'block';
+        chatbotContainer.style.display = 'none';
+    } else {
+        tableContainer.style.display = 'none';
+    }
+}
+// Python Tablosunu Göster veya Gizle
+function togglePythonTable() {
+    const pythonTable = document.getElementById('python-libraries-table');
+    if (pythonTable.style.display === 'none' || pythonTable.style.display === '') {
+        pythonTable.style.display = 'block';
+    } else {
+        pythonTable.style.display = 'none';
+    }
+}
+function toggleSection(sectionId) {
+    // Önceki tüm bölümleri gizle
+    const sections = ['chatbot-container', 'math-table', 'python-libraries-table'];
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        section.style.display = 'none';
+    });
+
+    // Seçilen bölümü göster
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.style.display = 'block';
+}
+
+function closeAlert() {
+    const alertBox = document.getElementById('alert-box');
+    alertBox.style.display = 'none';
+}
+
+
+
 // Kullanıcı mesajına göre cevap verecek fonksiyon
 function handleUserMessage(userText) {
     // Kullanıcıdan alınan metni küçük harfe çevir
@@ -78,5 +132,5 @@ function handleUserMessage(userText) {
 }
 
 window.onload = function() {
-    sendBotMessage("Hoşgeldiniz! Aşağıdaki konu başlıklarından devam edebilirsiniz:\n- Basit Sorular\n- Matematik Konuları");
+    sendBotMessage("Hoşgeldiniz! Aşağıdaki konu başlıklarından devam edebilir:\n- Basit Sorular\n- Matematik Konuları");
 };
